@@ -1,0 +1,941 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Work 2</title>
+    <style>
+        body {
+            background-image: url(Lenovo-wallpaper-6_DcyKDyp.jpg);
+            width: 100%;
+        }
+
+        /*=======================================Блок для відображення результату====================================*/
+
+        #mainBlock {
+            width: 36%;
+            height: 200px;
+            background-color: #fff;
+            margin: 1% 30%;
+            border: 1px solid black;
+            overflow: auto;
+            border: 5px solid #fff;
+            border-radius: 20px;
+            padding: 2%;
+            color: #fff;
+            background-color: rgba(103, 127, 31, 0.5);
+            text-align: center;
+        }
+
+        /*===========================================================================================================*/
+
+
+        /*=========================================Блок для навігаційних кнопок======================================*/
+
+        #navButtons {
+            width: 100%;
+            text-align: center;
+        }
+        #editButton {
+            padding: 0.5%;
+            border-radius: 10px;
+            box-shadow: 0px 3px 0px 0px #02daf0;
+        }
+        #styleButton {
+            padding: 0.5%;
+            border-radius: 10px;
+            box-shadow: 0px 3px 0px 0px #02daf0;
+        }
+        #blockPageButton{
+            padding: 0.5%;
+            border-radius: 10px;
+            box-shadow: 0px 3px 0px 0px #02daf0;
+        }
+
+        /*===========================================================================================================*/
+
+
+        /*============================================Блок для редагування===========================================*/
+
+        #editBlock__start {
+            width: 40%;
+            height: 200px;
+            margin: 1% 30%;
+            border: 5px solid #fff;
+            border-radius: 20px;
+            padding-bottom: 4%;
+            background-color: rgba(39, 88, 123, 0.5);
+        }
+        #editBlock {
+            width: 40%;
+            height: 200px;
+            margin: 1% 30%;
+            border: 5px solid #fff;
+            border-radius: 20px;
+            padding-bottom: 4%;
+            background-color: rgba(39, 88, 123, 0.5);
+        }
+        #editBlockContent {
+            width: 92%;
+            height: 150px;
+            margin: 3% 4% 0 3.5%;
+            resize: none;
+            text-align: center;
+        }
+        #btnSave {
+            margin-left: 3.5%;
+            border-radius: 10px;
+        }
+        #btnAdd {
+            border-radius: 10px;
+        }
+
+        /*===========================================================================================================*/
+
+
+        /*============================================Блок для стилізації============================================*/
+
+        #style__block {
+            width: 38%;
+            height: 200px;
+            margin: 1% 30%;
+            border: 5px solid #fff;
+            background: rgba(39, 88, 123, 0.5);
+            border-radius: 20px;
+            color: white;
+            padding: 1%;
+            padding-bottom: 3%;
+        }
+        #style__block-1 {
+            margin: 1%;
+        }
+        #style__block-2 {
+            margin: 4% 1%;
+        }
+        #style__block-3 {
+            margin: 4% 1%;
+        }
+        #style__block-4 {
+            margin: 4% 1%;
+        }
+        #list {
+            background-color: #89e18d;
+            border-radius: 20px;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+        #text__colorBtn {
+            border-radius: 20px;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+        #background__colorBtn {
+            border-radius: 20px;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+
+        /*=============================================Кнопки для зміни кольорів=====================================*/
+
+        #mainColorBlock {
+            position: absolute;
+            top: 410px;
+            left: 740px;
+            width: 156px;
+            height: 156px;
+            border-collapse: collapse;
+            border: 2px double black;
+        }
+        .item_color_block {
+            width: 50px;
+            height: 50px;
+            float: left;
+            border: 1px solid black;
+        }
+
+        /*===========================================================================================================*/
+
+
+        /*===========================================================================================================*/
+
+
+        /*===================================Блок для додавання таблиць та списків===================================*/
+
+        #page__add__element {
+            width: 50%;
+            margin: auto;
+            height: 500px;
+            border: 1px solid black;
+            color: #fff;
+            background-color: rgba(36, 88, 121, 0.5);
+            padding: 2%;
+            display: flex;
+            flex-direction: row;
+            border: 3px solid #006b00;
+            border-radius: 20px;
+        }
+
+        /*=========================================Блок для створення списків========================================*/
+
+        #block_input__first {
+            margin: 2% 0;
+        }
+        #block_input__second {
+            margin: 5% 0;
+        }
+        #numberOfItems {
+            border-radius: 20px;
+            width: 5%;
+        }
+        #item__list {
+            background-color: #91df8b;
+            border-radius: 20px;
+            width: 10%;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+        #create__item__list {
+            margin-top: 3%;
+            border-radius: 20px;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+
+        /*===========================================================================================================*/
+
+
+        /*========================================Блок для створення таблиць=========================================*/
+
+        #sizeOfBorder {
+            width: 5%;
+        }
+
+        #blockNumberOfRows {
+            margin: 2% 0;
+        }
+        #blockNumberOfColumn {
+            margin: 2% 0;
+        }
+        #title__style {
+            margin: 5% 0;
+        }
+        #blockWidthBorder {
+            margin: 2% 0;
+        }
+        #blockHeightBorder {
+            margin: 2% 0;
+        }
+        #blockStyleBorder {
+            margin: 2% 0;
+        }
+        #add__table__element input {
+            border-radius: 20px;
+        }
+        #add__table__element select {
+            border-radius: 20px;
+            background-color: #88dd88;
+        }
+        #create__table {
+            border-radius: 20px;
+            box-shadow: 0px 2px 0px 0px #000;
+        }
+
+        /*===========================================================================================================*/
+        /*===========================================================================================================*/
+
+    </style>
+</head>
+
+<body>
+    <!--==========================================Блок для результату=======================================-->
+    <main id="mainBlock"></main>
+    <!--====================================================================================================-->
+
+    <!--============================Кнопки Редагування, Стилізації і Блокування програми====================-->
+    <nav id="navButtons">
+        <button id="editButton">Редагувати</button>
+        <button id="styleButton">Стилізувати</button>
+        <button id="blockPageButton">Блокувати</button>
+    </nav>
+    <!--====================================================================================================-->
+
+    <!--====================================Початковий блок для редагування=================================-->
+    <article id="editBlock__start"></article>
+    <!--====================================================================================================-->
+
+    <!--========================================Блок для редагування========================================-->
+    <article id="editBlock">
+        <textarea id="editBlockContent"></textarea>
+        <button id="btnSave">Зберегти</button>
+        <button id="btnAdd">Додати</button>
+    </article>
+    <!--====================================================================================================-->
+
+    <!--==================================Блок для додавання таблиць та списків=============================-->
+    <article id="page__add__element">
+        <h2 id="add__element__title">Виберіть, що саме ви хочете додати:</h2>
+        <input class="constructor" type="radio" id="table__constructor" name="#" checked>Таблиця
+        <input class="constructor" type="radio" id="list__constructor" name="#">Список
+
+        <!--========================================Таблиця=================================================-->
+        <section id="add__table__element">
+            <div id="blockNumberOfRows">
+                <span>Введіть кількість рядків таблиці: </span>
+                <input type="text" value="5" id="number_of__rows">
+                <span id="errorWindow1">Введіть коректне число [1-0]</span>
+            </div>
+            <div id="blockNumberOfColumn">
+                <span>Введіть кількість стовбців таблиці: </span>
+                <input type="text" value="5" id="number_of__column">
+                <span id="errorWindow2">Введіть коректне число [1-0]</span>
+            </div>
+
+            <h3 id="title__style">Стилізуйте таблицю: </h3>
+            <div id="blockWidthBorder">
+                <span>Введіть ширину комірки таблиці: </span>
+                <input type="text" value="10" id="valueWidth__Border">
+                <span id="errorWindow3">Введіть коректне число [1-0]</span>
+            </div>
+            <div id="blockHeightBorder">
+                <span>Введіть висоту комірки таблиці: </span>
+                <input type="text" value="10" id="valueHeight__Border">
+                <span id="errorWindow4">Введіть коректне число [1-0]</span>
+            </div>
+            <div id="blockStyleBorder">
+                <span>Товщина</span>
+                <input type="text" value="6" id="sizeOfBorder">
+                <span id="errorWindow5">Введіть коректне число [1-0]</span>
+                <span>Тип лінії:</span>
+                <select id="style__type_of_the_border">
+                    <option>solid</option>
+                    <option>dotted</option>
+                    <option>dashed</option>
+                    <option>double</option>
+                </select>
+                <span>Колір лінії: </span>
+                <select id="borderColor">
+                    <option>black</option>
+                    <option>red</option>
+                    <option>blue</option>
+                </select>
+            </div>
+            <button type="submit" id="create__table">Створити таблицю</button>
+        </section>
+        <!--====================================================================================================-->
+
+        <!--==============================================Список================================================-->
+        <section id="add__list__element">
+            <div id="block_input__first">
+                <input class="list__constructor" type="radio" id="ol_list" name="clist" value="ol" checked> Номерований список
+                <input class="list__constructor" type="radio" id="ul_list" name="clist" value="ul">Маркований список
+
+            </div>
+            <div class="input___list-number">
+                <span id="number__of__elements__Block">Введіть кількість елементів у списку:<input id="numberOfItems" type="text" value="5"></span>
+                <span id="errorWindow6">Введіть число</span>
+            </div>
+
+            <div id="block_input__second"><span>Тип маркування: 
+            <select id="item__list">
+                <option>Circle</option>
+                <option>disc</option>
+                <option>square</option>
+            </select>
+        </span></div>
+
+            <button id="create__item__list">Створити список</button>
+        </section>
+        <!--====================================================================================================-->
+
+    </article>
+    <!--========================================================================================================-->
+
+    <!--==================================Блок для стилізації блока результата==================================-->
+    <article id="style__block">
+        <section id="style__block-1">
+            <span>Розмір тексту: </span>
+            <input type="radio" id="radioBtn__12px" name="#">12px
+            <input type="radio" id="radioBtn__14px" name="#">14px
+            <input type="radio" id="radioBtn__16px" name="#">16px
+            <input type="radio" id="radioBtn__18px" name="#">18px
+            <input type="radio" id="radioBtn__20px" name="#">20px
+        </section>
+        <section id="style__block-2">
+            <span>Шрифт</span>
+            <select id="list">
+                <option id="Times-New-Roman__Item" value="Times New Roman">Times New Roman</option>
+                <option id="Arial__Item" value="Arial">Arial</option>
+                <option id="Tahoma__Item" value="Tahoma">Tahoma</option>
+                <option id="Verdana__Item" value="Verdana">Verdana</option>
+            </select>
+        </section>
+        <section id="style__block-3">
+            <button id="text__colorBtn">Колір тексту</button>
+            <button id="background__colorBtn">Колір фону</button>
+        </section>
+
+        <section id="style__block-4">
+            <input name="input_class" id="bold_text" type="checkbox">Жирний текст
+            <input name="input_class" id="italic_text" type="checkbox">Курсивний текст
+        </section>
+    </article>
+    <!--========================================================================================================-->
+
+    <script>
+
+    //============================================Пароль до блокування============================================
+    var blockPassword = "1111";
+    //============================================================================================================
+        
+        
+        
+    //============================================ініціалізація блоків============================================
+    var mainBlock = getId("mainBlock");
+    var editBlock__start = getId("editBlock__start");
+    var editBlock = getId("editBlock");
+    //============================================================================================================
+        
+        
+
+    //================================ініціалізація контенту для блоку редагування================================
+    var editBlockContent = getId("editBlockContent");
+    //============================================================================================================
+        
+        
+
+    //============================================ініціалізація кнопок============================================
+    var btnSave = getId("btnSave");
+    var btnAdd = getId("btnAdd");
+    var editButton = getId("editButton");
+    var styleButton = getId("styleButton");
+    var navButtons = getId("navButtons");
+    //============================================================================================================
+        
+        
+
+    //==========================================відключення інших блоків==========================================
+    editBlock.style.display = "none";
+    style__block.style.display = "none";
+    //============================================================================================================
+        
+        
+
+    //=======================================Включення блоку редагування коду=====================================
+    editButton.onclick = function () {
+        editBlock__start.style.display = "none";
+        editBlock.style.display = "block";
+        style__block.style.display = "none";
+    }
+    //============================================================================================================
+    
+    
+
+    //=======================================Включення блоку стилізації коду======================================
+    styleButton.onclick = function () {
+        editBlock__start.style.display = "none";
+        editBlock.style.display = "none";
+        style__block.style.display = "block";
+    }
+    //============================================================================================================
+    
+    
+
+    //======================================збереження та відображення змін=======================================
+    btnSave.onclick = function () {
+        mainBlock.innerHTML = editBlockContent.value;
+    }
+
+    for (var i = 1; i <= 5; i++) {
+        mainBlock.innerHTML += "<p>Якись там текст в якому шось там пише</p>";
+        editBlockContent.value += "<p>Якись там текст в якому шось там пише</p>\n";
+    }
+    //============================================================================================================
+        
+
+
+    //==================================Сторінка для додавання таблиць і списків==================================
+        var page__add__element = getId("page__add__element");
+
+        var add__list__element = getId("add__list__element");
+        var add__table__element = getId("add__table__element");
+
+        page__add__element.style.display = "none";
+
+    btnAdd.onclick = function () {
+        mainBlock.style.display = "none";
+        editBlock.style.display = "none";
+        navButtons.style.display = "none";
+        page__add__element.style.display = "block";
+
+        add__list__element.style.display = "none";
+        add__table__element.style.display = "none";
+
+        for (var i = 0; i <= 1; i++) {
+            if (getClass("constructor", i).checked == true) {
+                if (i == 0) {
+                    add__list__element.style.display = "none";
+                    add__table__element.style.display = "block";
+                } else if (i == 1) {
+                    add__list__element.style.display = "block";
+                    add__table__element.style.display = "none";
+                }
+            }
+        }
+    }
+    //============================================================================================================
+    
+    
+
+    //=========================================Переключення між таблицями і списками==============================
+    getId("list__constructor").onclick = function () {
+        add__list__element.style.display = "block";
+        add__table__element.style.display = "none";
+    }
+    getId("table__constructor").onclick = function () {
+        add__list__element.style.display = "none";
+        add__table__element.style.display = "block";
+    }
+    //============================================================================================================
+
+
+
+    //==============================================Створення таблиції============================================
+    var create__table = getId("create__table");
+    //============================================================================================================
+        
+        
+
+    //======================================Діставання інформації для таблиції====================================
+    var style__type_of_the_border = getId("style__type_of_the_border");
+    var borderColor = getId("borderColor");
+    var number_of__rows = getId("number_of__rows");
+    var number_of__column = getId("number_of__column");
+    var valueWidth__Border = getId("valueWidth__Border");
+    var valueHeight__Border = getId("valueHeight__Border");
+    var sizeOfBorder = getId("sizeOfBorder");
+    //============================================================================================================
+        
+        
+
+    //==============================================ініціалізація помилок=========================================
+    var errorWindow1 = getId("errorWindow1");
+    var errorWindow2 = getId("errorWindow2");
+    var errorWindow3 = getId("errorWindow3");
+    var errorWindow4 = getId("errorWindow4");
+    var errorWindow5 = getId("errorWindow5");
+    //============================================================================================================
+        
+        
+
+    //========================================Виключення помилок(по замовчуванні)=================================
+    errorWindow1.style.display = "none";
+    errorWindow2.style.display = "none";
+    errorWindow3.style.display = "none";
+    errorWindow4.style.display = "none";
+    errorWindow5.style.display = "none";
+    //============================================================================================================
+        
+
+
+    //=======================================Попередній стан вікна після помилки==================================
+    number_of__rows.onfocus = function () {
+        number_of__rows.style.borderColor = "#fff";
+        errorWindow1.style.display = "none";
+    }
+    number_of__column.onfocus = function () {
+        number_of__column.style.borderColor = "#fff";
+        errorWindow2.style.display = "none";
+    }
+    valueWidth__Border.onfocus = function () {
+        valueWidth__Border.style.borderColor = "#fff";
+        errorWindow3.style.display = "none";
+    }
+    valueHeight__Border.onfocus = function () {
+        valueHeight__Border.style.borderColor = "#fff";
+        errorWindow4.style.display = "none";
+    }
+    sizeOfBorder.onfocus = function () {
+        sizeOfBorder.style.borderColor = "#fff";
+        errorWindow5.style.display = "none";
+    }
+    //=============================================================================================================
+    
+
+
+    //====================================================table====================================================
+    create__table.onclick = function () {
+    //=============================================================================================================
+        
+        
+
+    //====================================================Validation===============================================
+        var counter1 = counter();
+
+        if (Math.abs(number_of__rows.value) != number_of__rows.value || number_of__rows.value == "" || isNaN(number_of__rows.value)) {
+            number_of__rows.style.borderColor = "red";
+            errorWindow1.style.display = "inline-block";
+            errorWindow1.style.color = "red";
+            errorWindow1.style.paddingLeft = "1%";
+            counter1();
+        }
+        if (Math.abs(number_of__column.value) != number_of__column.value || number_of__column.value == "" || isNaN(number_of__column.value)) {
+            number_of__column.style.borderColor = "red";
+            errorWindow2.style.display = "inline-block";
+            errorWindow2.style.color = "red";
+            errorWindow2.style.paddingLeft = "1%";
+            counter1();
+        }
+        if (Math.abs(valueWidth__Border.value) != valueWidth__Border.value || valueWidth__Border.value == "" || isNaN(valueWidth__Border.value)) {
+            valueWidth__Border.style.borderColor = "red";
+            errorWindow3.style.display = "inline-block";
+            errorWindow3.style.color = "red";
+            errorWindow3.style.paddingLeft = "1%";
+            counter1();
+        }
+        if (Math.abs(valueHeight__Border.value) != valueHeight__Border.value || valueHeight__Border.value == "" || isNaN(valueHeight__Border.value)) {
+            valueHeight__Border.style.borderColor = "red";
+            errorWindow4.style.display = "inline-block";
+            errorWindow4.style.color = "red";
+            errorWindow4.style.paddingLeft = "1%";
+            counter1();
+        }
+        if (Math.abs(sizeOfBorder.value) != sizeOfBorder.value || sizeOfBorder.value == "" || isNaN(sizeOfBorder.value)) {
+            sizeOfBorder.style.borderColor = "red";
+            errorWindow5.style.display = "inline-block";
+            errorWindow5.style.color = "red";
+            errorWindow5.style.paddingLeft = "1%";
+            counter1();
+        }
+
+    //============================================================================================================
+        
+        
+        var counter2 = counter();
+
+            if (Math.abs(numberOfItems.value) != numberOfItems.value || numberOfItems.value == "" || isNaN(numberOfItems.value)) {
+                numberOfItems.style.borderColor = "red";
+                errorWindow6.style.display = "inline-block";
+                errorWindow6.style.color = "red";
+                errorWindow6.style.paddingLeft = "1%";
+
+                counter2();
+            }    
+
+    //===================================Якщо лічильник рівний нулю тоді 'true'===================================
+        if (counter1() == 0) {
+            var typeOfBorder = "";
+            for (var i = 0; i < style__type_of_the_border.length; i++) {
+                if (style__type_of_the_border.options[i].selected) {
+                    typeOfBorder = style__type_of_the_border.options[i].value;
+                }
+            }
+    //============================================================================================================
+        
+        
+        
+    //========================================Отримання кольору таблиці===========================================
+        var value__borderColor = "";
+            for (var i = 0; i < borderColor.length; i++) {
+                if (borderColor.options[i].selected) {
+                    value__borderColor = borderColor.options[i].value;
+                }
+            }
+
+        editBlockContent.value += "\n<table style='border-collapse: collapse;'>";
+            
+            for (var i = 1; i <= number_of__rows.value; i++) {
+                editBlockContent.value += "\n\t<tr>";
+                for (var j = 1; j <= number_of__column.value; j++) {
+                    editBlockContent.value += "\n\t\t<td style='border: " + sizeOfBorder.value + "px " + typeOfBorder + " " + value__borderColor + "; width: " + valueWidth__Border.value + "px; height: " + valueHeight__Border.value + "px;'>" + j + "</td>";
+                }
+                editBlockContent.value += "\n\t</tr>";
+            }
+            editBlockContent.value += "\n</table>";
+
+            returnMainPage();
+        }
+    }
+    //============================================================================================================
+
+
+    //==========================ініціалізація та реалізація динамічного створення списку==========================
+        var create__item__list = getId("create__item__list");
+    //============================================================================================================
+        
+        
+
+    //=======ініціалізація для номерованого( немає список типів ) та маркованого списками( є список типів )=======
+        var block_input__second = getId("block_input__second");
+    //============================================================================================================
+        
+        
+
+    //================================по замовчуванню немає список типів для 'list'===============================
+        block_input__second.style.display = "none";
+    //============================================================================================================
+        
+        
+
+    //=======перемикач для номерованого( немає список типів ) та маркованого списками( є список типів )===========
+        document.getElementById("ul_list").onchange = function () {
+            block_input__second.style.display = "block";
+        }
+        document.getElementById("ol_list").onchange = function () {
+            block_input__second.style.display = "none";
+        }
+    //============================================================================================================
+        
+        
+
+    //=============================цикли який визначає що є 'checked' при старті проекту==========================
+        var list___type;
+        for (var i = 0; i <= 1; i++) {
+            if (document.getElementsByClassName("list__constructor")[i].checked == true) {
+                list___type = document.getElementsByClassName("list__constructor")[i].value;
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //=======================слухач для переключення між номерованим та маркованим списками=======================
+        document.body.onclick = function (x) {
+            if (x.target.id == "ul_list") {
+                list___type = x.target.value;
+            } else if (x.target.id == "ol_list") {
+                list___type = x.target.value;
+            }
+        }
+    //============================================================================================================
+
+
+    //================================ініціалізація змінної кіль. пунктів списку==================================
+        var numberOfItems = getId("numberOfItems");
+    //============================================================================================================
+        
+        
+
+    //===================================ініціалізація повідомлення про помилку===================================
+        var errorWindow6 = getId("errorWindow6");
+    //============================================================================================================
+        
+        
+
+    //=============================по замовчуванню повідомлення про помилку відключене============================
+        errorWindow6.style.display = "none";
+    //============================================================================================================
+        
+        
+
+    //=======================================Попередній стан вікна після помилки==================================
+        numberOfItems.onfocus = function () {
+            numberOfItems.style.borderColor = "#fff";
+            errorWindow6.style.display = "none";
+        }
+    //============================================================================================================
+        
+        
+
+        create__item__list.onclick = function () {
+
+    //=======================================Якщо лічильник рівний нулю true======================================
+            if (counter2() == 0) {
+                var sle = 0;
+                for (var i = 0; i < getId("item__list").length; i++) {
+                    if (getId("item__list").options[i].selected) {
+                        sle = getId("item__list").options[i].value;
+                    }
+                }
+                editBlockContent.value += "\n<" + list___type + " type=" + sle + ">";
+                for (var i = 0; i < getId("numberOfItems").value; i++) {
+                    editBlockContent.value += "\n\t<li>text</li>";
+                }
+                editBlockContent.value += "\n</" + list___type + ">";
+
+                returnMainPage();
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //=========================================Подія для задання розміру текста===================================
+        document.body.onchange = function (x) {
+            if (x.target.id == "radioBtn__12px") {
+                mainBlock.style.fontSize = "12px";
+            } else if (x.target.id == "radioBtn__14px") {
+                mainBlock.style.fontSize = "14px";
+            } else if (x.target.id == "radioBtn__16px") {
+                mainBlock.style.fontSize = "16px";
+            } else if (x.target.id == "radioBtn__18px") {
+                mainBlock.style.fontSize = "18px";
+            } else if (x.target.id == "radioBtn__20px") {
+                mainBlock.style.fontSize = "20px";
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //=========================Ініціалізація списку шрифтів та подія для його визначення==========================
+        var list = getId("list");
+
+        list.onchange = function () {
+            for (var i = 0; i < list.length; i++) {
+                if (list.options[i].selected) {
+                    mainBlock.style.fontFamily = list.options[i].value;
+                }
+            }
+        }
+    //============================================================================================================
+
+
+        
+    //=============================Ініціалізація кольорових блоків для тексту та фону=============================
+        var mainColorBlock = createTag("div");
+    //============================================================================================================
+        
+        
+
+    //===========Змінна для перевірки яка кнопка нажата (  text__colorBtn або background__colorBtn  )=============
+        var t = 0;
+    //============================================================================================================
+        
+        
+
+    //================================Кнопка для виклику блоку кольорів для тексту================================
+        var text__colorBtn = getId("text__colorBtn");
+
+        text__colorBtn.onclick = function () {
+            colorBlockConstructor();
+            t = 1;
+        }
+    //============================================================================================================
+        
+        
+
+    //================================Кнопка для виклику блоку кольорів для фону==================================
+        var background__colorBtn = getId("background__colorBtn");
+
+        background__colorBtn.onclick = function () {
+            colorBlockConstructor();
+            t = 2;
+        }
+    //============================================================================================================
+        
+        
+
+    //==========================Кнопки для зміни кольору тексту або фону головного блоку==========================
+        mainColorBlock.onclick = function (x) {
+            if (t == 1) {
+                mainBlock.style.color = x.target.style.backgroundColor;
+            } else if (t == 2) {
+                mainBlock.style.backgroundColor = x.target.style.backgroundColor;
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //=============================================для курсивного шрифта==========================================
+        var bold_text = getId("bold_text");
+
+        bold_text.onclick = function () {
+            if (!this.checked) {
+                mainBlock.style.fontWeight = "normal";
+            } else {
+                mainBlock.style.fontWeight = "bold";
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //===============================================для жирного шрифта===========================================
+        var italic_text = getId("italic_text");
+
+        italic_text.onclick = function () {
+            if (!this.checked) {
+                mainBlock.style.fontStyle = "normal";
+            } else {
+                mainBlock.style.fontStyle = "italic";
+            }
+        }
+    //============================================================================================================
+        
+        
+
+    //===========================================реалізація кнопки блокування=====================================
+        var blockPageButton = getId("blockPageButton");
+        blockPageButton.onclick = function () {
+        document.body.style.opacity = "0.2";
+        var i = 0,
+            pass;
+
+        do {
+            if (pass == "1111" || pass == "'1111'") {
+                break;
+            }
+            if (i > 0) {
+                pass = prompt("Пароль невірний! Введіть пароль ще раз!", "");
+            } else {
+                pass = prompt("Ресурс заблоковано! Введіть пароль!", "");
+            }
+            i++;
+        } while (pass != blockPassword);
+        document.body.style.opacity = "1";
+    }
+
+    function createTag(tag) {
+    return document.createElement(tag);
+    }
+
+    function getId(id) {
+        return document.getElementById(id);
+    }
+
+    function getClass(className, index) {
+        return document.getElementsByClassName(className)[index];
+    }
+    //============================================================================================================
+        
+        
+
+    //================================Функція для переходу назад на головну сторінку==============================
+    function returnMainPage() {
+        page__add__element.style.display = "none";
+        mainBlock.style.display = "block";
+        editBlock.style.display = "block";
+        navButtons.style.display = "block";
+    }
+    //============================================================================================================
+        
+        
+
+    //=============Функція створення кольорових блоків для зміни кольору тексту або фону головного блоку==========
+    function colorBlockConstructor() {
+        getId("style__block").appendChild(mainColorBlock);
+        mainColorBlock.setAttribute("id", "mainColorBlock");
+
+        for (var i = 0; i < 9; i++) {
+            var colorBlockItem = createTag("div");
+            mainColorBlock.appendChild(colorBlockItem);
+            mainColorBlock.children[i].className = "item_color_block";
+        }
+        mainColorBlock.children[0].style.backgroundColor = "#059b9b";
+        mainColorBlock.children[1].style.backgroundColor = "#920e00";
+        mainColorBlock.children[2].style.backgroundColor = "#28b975";
+        mainColorBlock.children[3].style.backgroundColor = "#37d100";
+        mainColorBlock.children[4].style.backgroundColor = "#888888";
+        mainColorBlock.children[5].style.backgroundColor = "#ff1800";
+        mainColorBlock.children[6].style.backgroundColor = "#000fff";
+        mainColorBlock.children[7].style.backgroundColor = "#90158a";
+        mainColorBlock.children[8].style.backgroundColor = "#898100";
+    }
+
+    function counter() {
+        var count = 0;
+        return function () {
+            return count++;
+        }
+    }
+    //============================================================================================================
+        
+    </script>
+</body>
+</html>
